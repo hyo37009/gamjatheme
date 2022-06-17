@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  {% include head.html %}
+
+  <body>
+    <div id="defaultFlexContainer">
+
+      <div class="sidebar">
+        {% include sidebar.html %}
+      </div>
+
+      <div class="contentContainer">
+        <nav class="nav">
+          <div class="nav-container">
+            <a href="{{ site.baseurl }}/">
+              <h2 class="nav-title">{{ site.title }}</h2>
+            </a>
+            <ul class="nav-social-icons">
+              {% if min-width: ($mobile+1) %}
+              {% include sidebar.html %}
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+        <main>
+          {{ content }}
+        </main>
+      </div>
+  
+    </div>
+    <footer>
+      <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Powered by Jekyll and <a href="#">gamja</a> theme.
+      </span>
+    </footer>
+  </body>
+</html>
